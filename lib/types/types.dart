@@ -53,10 +53,10 @@ class TextNode extends Node<String> {
   String value = '';
   List<Mark> marks = [];
 
-  TextNode(dynamic node) { 
+  TextNode(dynamic node) {
     value = node['value'] ?? '';
     _nodeType = node['nodeType'] ?? '';
-    node['marks']?.map((mark) {
+    node['marks']?.forEach((mark) {
       marks.add(Mark(mark['type']));
     });
   }
